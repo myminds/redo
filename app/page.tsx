@@ -1,103 +1,257 @@
 import Image from "next/image";
+import Link from "next/link";
+import { getAllPosts } from "../lib/post";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Readindo.com - Technology, Finance, Business, Career & Automobile Blog",
+  description: "Your trusted source for technology, finance, business, career, and automobile content. Expert insights and practical advice.",
+  keywords: ["technology", "finance", "business", "career", "automobile", "blog", "news", "tips", "guides"],
+};
 
 export default function Home() {
-  return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+  const allPosts = getAllPosts();
+  const recentPosts = allPosts.slice(0, 6);
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+  return (
+    <div className="font-sans min-h-screen bg-white dark:bg-black flex flex-col">
+      {/* Hero Section */}
+      <section className="w-full flex flex-col items-center justify-center py-16 px-4 sm:px-8 bg-gradient-to-b from-blue-50 dark:from-[#181818] to-white dark:to-black">
+        <div className="max-w-2xl w-full flex flex-col items-center text-center gap-6">
+          <Image
+            src="/next.svg"
+            alt="Readindo.com Logo"
+            width={120}
+            height={25}
+            className="dark:invert mb-2"
+            priority
+            loading="eager"
+          />
+          <h1 className="text-4xl sm:text-5xl font-bold text-gray-900 dark:text-white leading-tight">
+            Welcome to <span className="text-blue-600">Readindo.com</span>
+          </h1>
+          <p className="text-lg sm:text-xl text-gray-700 dark:text-gray-300">
+            Explore insightful blogs on <span className="font-semibold text-blue-600">Automobiles</span>, <span className="font-semibold text-green-600">Technology</span>, <span className="font-semibold text-purple-600">Finance</span>, <span className="font-semibold text-orange-600">Business</span>, and <span className="font-semibold text-red-600">Jobs</span>.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 mt-4 w-full justify-center">
+            <Link
+              href="/automobile"
+              className="bg-blue-600 text-white font-semibold rounded px-6 py-3 shadow hover:bg-blue-700 transition-colors duration-200 w-full sm:w-auto text-base"
+              prefetch
+            >
+              Explore Automobile
+            </Link>
+            <Link
+              href="/technology"
+              className="bg-green-600 text-white font-semibold rounded px-6 py-3 shadow hover:bg-green-700 transition-colors duration-200 w-full sm:w-auto text-base"
+              prefetch
+            >
+              Explore Technology
+            </Link>
+          </div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+      </section>
+
+      {/* Categories Section */}
+      <section className="max-w-6xl mx-auto w-full py-12 px-4 sm:px-8">
+        <h2 className="text-3xl font-bold mb-8 text-gray-900 dark:text-white text-center">
+          Explore Our Categories
+        </h2>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
+          <Link
+            href="/automobile"
+            className="group bg-white dark:bg-gray-800 rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-200 dark:border-gray-700"
+          >
+            <div className="text-center">
+              <div className="text-4xl mb-3">🚗</div>
+              <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-2">Automobile</h3>
+              <p className="text-sm text-gray-600 dark:text-gray-400 mb-3">Cars, bikes, reviews</p>
+              <span className="text-xs bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 px-2 py-1 rounded-full">
+                {allPosts.filter(post => post.category === "automobile").length} posts
+              </span>
+            </div>
+          </Link>
+
+          <Link
+            href="/technology"
+            className="group bg-white dark:bg-gray-800 rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-200 dark:border-gray-700"
+          >
+            <div className="text-center">
+              <div className="text-4xl mb-3">💻</div>
+              <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-2">Technology</h3>
+              <p className="text-sm text-gray-600 dark:text-gray-400 mb-3">AI, cybersecurity, tech</p>
+              <span className="text-xs bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 px-2 py-1 rounded-full">
+                {allPosts.filter(post => post.category === "technology").length} posts
+              </span>
+            </div>
+          </Link>
+
+          <Link
+            href="/finance"
+            className="group bg-white dark:bg-gray-800 rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-200 dark:border-gray-700"
+          >
+            <div className="text-center">
+              <div className="text-4xl mb-3">💰</div>
+              <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-2">Finance</h3>
+              <p className="text-sm text-gray-600 dark:text-gray-400 mb-3">Investment, crypto</p>
+              <span className="text-xs bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-200 px-2 py-1 rounded-full">
+                {allPosts.filter(post => post.category === "finance").length} posts
+              </span>
+            </div>
+          </Link>
+
+          <Link
+            href="/business"
+            className="group bg-white dark:bg-gray-800 rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-200 dark:border-gray-700"
+          >
+            <div className="text-center">
+              <div className="text-4xl mb-3">🏢</div>
+              <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-2">Business</h3>
+              <p className="text-sm text-gray-600 dark:text-gray-400 mb-3">Startup, leadership</p>
+              <span className="text-xs bg-orange-100 dark:bg-orange-900 text-orange-800 dark:text-orange-200 px-2 py-1 rounded-full">
+                {allPosts.filter(post => post.category === "business").length} posts
+              </span>
+            </div>
+          </Link>
+
+          <Link
+            href="/job"
+            className="group bg-white dark:bg-gray-800 rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-200 dark:border-gray-700"
+          >
+            <div className="text-center">
+              <div className="text-4xl mb-3">💼</div>
+              <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-2">Job</h3>
+              <p className="text-sm text-gray-600 dark:text-gray-400 mb-3">Career, interviews</p>
+              <span className="text-xs bg-red-100 dark:bg-red-900 text-red-800 dark:text-red-200 px-2 py-1 rounded-full">
+                {allPosts.filter(post => post.category === "job").length} posts
+              </span>
+            </div>
+          </Link>
+        </div>
+      </section>
+
+      {/* Tools Section */}
+      <section className="max-w-6xl mx-auto w-full py-12 px-4 sm:px-8">
+        <h2 className="text-3xl font-bold mb-8 text-gray-900 dark:text-white text-center">
+          Useful Tools
+        </h2>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-200 dark:border-gray-700">
+            <div className="text-center">
+              <div className="text-4xl mb-3">📊</div>
+              <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-2">Investment Calculator</h3>
+              <p className="text-sm text-gray-600 dark:text-gray-400 mb-4">Calculate compound interest and investment returns</p>
+              <button className="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors duration-200 text-sm font-medium">
+                Use Tool
+              </button>
+            </div>
+          </div>
+
+          <div className="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-200 dark:border-gray-700">
+            <div className="text-center">
+              <div className="text-4xl mb-3">🚗</div>
+              <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-2">Car EMI Calculator</h3>
+              <p className="text-sm text-gray-600 dark:text-gray-400 mb-4">Calculate monthly EMI for your dream car</p>
+              <button className="bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700 transition-colors duration-200 text-sm font-medium">
+                Use Tool
+              </button>
+            </div>
+          </div>
+
+          <div className="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-200 dark:border-gray-700">
+            <div className="text-center">
+              <div className="text-4xl mb-3">💼</div>
+              <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-2">Salary Calculator</h3>
+              <p className="text-sm text-gray-600 dark:text-gray-400 mb-4">Calculate take-home salary and deductions</p>
+              <button className="bg-purple-600 text-white px-4 py-2 rounded-lg hover:bg-purple-700 transition-colors duration-200 text-sm font-medium">
+                Use Tool
+              </button>
+            </div>
+          </div>
+
+          <div className="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-200 dark:border-gray-700">
+            <div className="text-center">
+              <div className="text-4xl mb-3">🏠</div>
+              <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-2">Home Loan Calculator</h3>
+              <p className="text-sm text-gray-600 dark:text-gray-400 mb-4">Calculate home loan EMI and eligibility</p>
+              <button className="bg-orange-600 text-white px-4 py-2 rounded-lg hover:bg-orange-700 transition-colors duration-200 text-sm font-medium">
+                Use Tool
+              </button>
+            </div>
+          </div>
+
+          <div className="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-200 dark:border-gray-700">
+            <div className="text-center">
+              <div className="text-4xl mb-3">📈</div>
+              <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-2">SIP Calculator</h3>
+              <p className="text-sm text-gray-600 dark:text-gray-400 mb-4">Calculate SIP returns and maturity amount</p>
+              <button className="bg-red-600 text-white px-4 py-2 rounded-lg hover:bg-red-700 transition-colors duration-200 text-sm font-medium">
+                Use Tool
+              </button>
+            </div>
+          </div>
+
+          <div className="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-200 dark:border-gray-700">
+            <div className="text-center">
+              <div className="text-4xl mb-3">💻</div>
+              <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-2">Tech Stack Builder</h3>
+              <p className="text-sm text-gray-600 dark:text-gray-400 mb-4">Build your perfect tech stack for projects</p>
+              <button className="bg-indigo-600 text-white px-4 py-2 rounded-lg hover:bg-indigo-700 transition-colors duration-200 text-sm font-medium">
+                Use Tool
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Recent Posts Section */}
+      <section className="max-w-6xl mx-auto w-full py-12 px-4 sm:px-8">
+        <h2 className="text-3xl font-bold mb-8 text-gray-900 dark:text-white text-center">
+          Latest Posts
+        </h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {recentPosts.map((post) => (
+            <Link
+              key={post.slug}
+              href={`/${post.category}/${post.slug}`}
+              className="group bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-200 dark:border-gray-700"
+            >
+              <div className="h-48 bg-gradient-to-br from-blue-100 to-purple-100 dark:from-blue-900 dark:to-purple-900 flex items-center justify-center">
+                <span className="text-4xl">
+                  {post.category === "automobile" ? "🚗" : 
+                   post.category === "technology" ? "💻" :
+                   post.category === "finance" ? "💰" :
+                   post.category === "business" ? "🏢" : "💼"}
+                </span>
+              </div>
+              <div className="p-6">
+                <div className="flex items-center gap-2 text-xs text-gray-500 dark:text-gray-400 mb-2">
+                  <span className="font-medium text-blue-600 dark:text-blue-400 uppercase">
+                    {post.category}
+                  </span>
+                  <span>•</span>
+                  <span>
+                    {new Date(post.date).toLocaleDateString("en-IN", { 
+                      year: "numeric", 
+                      month: "short", 
+                      day: "numeric" 
+                    })}
+                  </span>
+                </div>
+                <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-2 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
+                  {post.title}
+                </h3>
+                <p className="text-gray-600 dark:text-gray-300 text-sm line-clamp-2">
+                  {post.excerpt}
+                </p>
+              </div>
+            </Link>
+          ))}
+        </div>
+      </section>
+
+      {/* Footer */}
+     
     </div>
   );
 }

@@ -1,0 +1,11 @@
+{
+  "slug": "cybersecurity-tips-2024",
+  "title": "Essential Cybersecurity Tips for 2024: Protect Your Digital Life",
+  "date": "2024-01-20",
+  "author": "Mike Rodriguez",
+  "excerpt": "Learn the latest cybersecurity best practices to protect yourself from evolving threats in our increasingly digital world.",
+  "image": "/hello.jpg",
+  "category": "technology",
+  "tags": ["cybersecurity", "privacy", "data-protection", "online-safety"],
+  "content": "<h2>Why Cybersecurity Matters More Than Ever</h2><p>With cyber attacks increasing by 38% in 2023, protecting your digital assets has never been more critical.</p><h3>Password Security</h3><p>Use unique, complex passwords for each account. Consider a password manager to generate and store them securely.</p><h3>Two-Factor Authentication</h3><p>Enable 2FA on all important accounts. This adds an extra layer of security even if your password is compromised.</p><h3>Software Updates</h3><p>Keep all software updated. Most security patches address known vulnerabilities that hackers exploit.</p><h3>Phishing Awareness</h3><p>Be cautious of suspicious emails and links. Verify sender identities before clicking on any attachments or links.</p><h2>Advanced Protection</h2><p>Consider using VPNs for public Wi-Fi, encrypting sensitive files, and regularly backing up your data to secure cloud storage.</p>"
+}

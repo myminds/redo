@@ -1,0 +1,11 @@
+{
+  "slug": "electric-vehicle-charging-guide",
+  "title": "Electric Vehicle Charging Guide: Everything You Need to Know",
+  "date": "2024-01-27",
+  "author": "Emma Davis",
+  "excerpt": "Master EV charging with our comprehensive guide covering home charging, public stations, charging speeds, and cost optimization strategies.",
+  "image": "/hello.jpg",
+  "category": "automobile",
+  "tags": ["electric-vehicles", "ev-charging", "sustainability", "green-technology"],
+  "content": "<h2>Home Charging Solutions</h2><p>Installing a home charging station is the most convenient way to charge your EV. Level 2 chargers provide faster charging than standard outlets.</p><h3>Charging Levels Explained</h3><p>Level 1 (120V): Slowest, uses standard household outlet. Level 2 (240V): Faster, requires installation. Level 3 (DC Fast): Fastest, public stations only.</p><h3>Public Charging Networks</h3><p>Major networks include Tesla Superchargers, ChargePoint, and Electrify America. Download apps to find stations and check availability.</p><h3>Charging Etiquette</h3><p>Don't hog charging spots, move your car when charging is complete, and be considerate of other EV drivers waiting to charge.</p><h2>Cost Optimization</h2><p>Charge during off-peak hours when electricity rates are lower. Many utilities offer special EV charging rates for overnight charging.</p><h3>Battery Health</h3><p>Avoid frequent fast charging, keep battery between 20-80% when possible, and avoid extreme temperatures for optimal battery life.</p>"
+}
