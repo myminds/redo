@@ -13,14 +13,14 @@ export default function Header() {
         <Link href="/" className="flex items-center gap-2">
           <Image
             src="/next.svg"
-            alt="Readindo.com Logo"
+            alt="Reagdindonstyf.com Logo"
             className="h-5 sm:h-6 w-auto dark:invert"
             width={120}
             height={25}
             priority
           />
           <span className="font-bold text-base sm:text-lg tracking-tight text-gray-900 dark:text-white hidden sm:block">
-            Readindo.com
+            Reagdindonstyf.com
           </span>
         </Link>
 

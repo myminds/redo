@@ -10,18 +10,18 @@ export async function generateMetadata(): Promise<Metadata> {
   const posts = getPostsByCategory("finance");
   
   return {
-    title: "Finance Blog - Readindo.com",
+    title: "Finance Blog - Reagdindonstyf.com",
     description: "Expert financial advice, investment strategies, cryptocurrency insights, and personal finance tips for financial success.",
     keywords: ["finance", "investment", "cryptocurrency", "personal-finance", "wealth-building"],
     openGraph: {
-      title: "Finance Blog - Readindo.com",
+      title: "Finance Blog - Reagdindonstyf.com",
       description: "Expert financial advice, investment strategies, cryptocurrency insights, and personal finance tips for financial success.",
       type: "website",
-      url: "https://readindo.com/finance",
+      url: "https://Reagdindonstyf.com/finance",
     },
     twitter: {
       card: "summary_large_image",
-      title: "Finance Blog - Readindo.com",
+      title: "Finance Blog - Reagdindonstyf.com",
       description: "Expert financial advice, investment strategies, cryptocurrency insights, and personal finance tips for financial success.",
     },
   };

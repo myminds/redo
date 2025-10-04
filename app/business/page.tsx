@@ -10,18 +10,18 @@ export async function generateMetadata(): Promise<Metadata> {
   const posts = getPostsByCategory("business");
   
   return {
-    title: "Business Blog - Readindo.com",
+    title: "Business Blog - Reagdindonstyf.com",
     description: "Business insights, entrepreneurship tips, leadership advice, and strategies for business growth and success.",
     keywords: ["business", "entrepreneurship", "leadership", "startup", "business-growth"],
     openGraph: {
-      title: "Business Blog - Readindo.com",
+      title: "Business Blog - Reagdindonstyf.com",
       description: "Business insights, entrepreneurship tips, leadership advice, and strategies for business growth and success.",
       type: "website",
-      url: "https://readindo.com/business",
+      url: "https://Reagdindonstyf.com/business",
     },
     twitter: {
       card: "summary_large_image",
-      title: "Business Blog - Readindo.com",
+      title: "Business Blog - Reagdindonstyf.com",
       description: "Business insights, entrepreneurship tips, leadership advice, and strategies for business growth and success.",
     },
   };

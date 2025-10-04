@@ -10,18 +10,18 @@ export async function generateMetadata(): Promise<Metadata> {
   const posts = getPostsByCategory("automobile");
   
   return {
-    title: "Automobile Blog - Readindo.com",
+    title: "Automobile Blog - Reagdindonstyf.com",
     description: "Read the latest blog posts and articles about automobiles, cars, bikes, and the automotive industry.",
     keywords: ["automobile", "cars", "bikes", "automotive", "reviews", "tips"],
     openGraph: {
-      title: "Automobile Blog - Readindo.com",
+      title: "Automobile Blog - Reagdindonstyf.com",
       description: "Latest news, reviews, and tips about cars, bikes, and the world of automobiles.",
       type: "website",
-      url: "https://readindo.com/automobile",
+      url: "https://Reagdindonstyf.com/automobile",
     },
     twitter: {
       card: "summary_large_image",
-      title: "Automobile Blog - Readindo.com",
+      title: "Automobile Blog - Reagdindonstyf.com",
       description: "Latest news, reviews, and tips about cars, bikes, and the world of automobiles.",
     },
   };

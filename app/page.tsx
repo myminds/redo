@@ -4,7 +4,7 @@ import { getAllPosts } from "../lib/post";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Readindo.com - Technology, Finance, Business, Career & Automobile Blog",
+  title: "Reagdindonstyf.com - Technology, Finance, Business, Career & Automobile Blog",
   description: "Your trusted source for technology, finance, business, career, and automobile content. Expert insights and practical advice.",
   keywords: ["technology", "finance", "business", "career", "automobile", "blog", "news", "tips", "guides"],
 };
@@ -20,7 +20,7 @@ export default function Home() {
         <div className="max-w-2xl w-full flex flex-col items-center text-center gap-6">
           <Image
             src="/next.svg"
-            alt="Readindo.com Logo"
+            alt="Reagdindonstyf.com Logo"
             width={120}
             height={25}
             className="dark:invert mb-2"
@@ -28,7 +28,7 @@ export default function Home() {
             loading="eager"
           />
           <h1 className="text-4xl sm:text-5xl font-bold text-gray-900 dark:text-white leading-tight">
-            Welcome to <span className="text-blue-600">Readindo.com</span>
+            Welcome to <span className="text-blue-600">Reagdindonstyf.com</span>
           </h1>
           <p className="text-lg sm:text-xl text-gray-700 dark:text-gray-300">
             Explore insightful blogs on <span className="font-semibold text-blue-600">Automobiles</span>, <span className="font-semibold text-green-600">Technology</span>, <span className="font-semibold text-purple-600">Finance</span>, <span className="font-semibold text-orange-600">Business</span>, and <span className="font-semibold text-red-600">Jobs</span>.

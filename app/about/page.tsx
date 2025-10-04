@@ -2,19 +2,19 @@ import Link from "next/link";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "About Us - Readindo.com",
-  description: "Learn about Readindo.com - your trusted source for technology, finance, business, career, and automobile content. Discover our mission and values.",
+  title: "About Us - Reagdindonstyf.com",
+  description: "Learn about Reagdindonstyf.com - your trusted source for technology, finance, business, career, and automobile content. Discover our mission and values.",
   keywords: ["about", "readindo", "blog", "technology", "finance", "business", "career", "automobile"],
   openGraph: {
-    title: "About Us - Readindo.com",
-    description: "Learn about Readindo.com - your trusted source for technology, finance, business, career, and automobile content.",
+    title: "About Us - Reagdindonstyf.com",
+    description: "Learn about Reagdindonstyf.com - your trusted source for technology, finance, business, career, and automobile content.",
     type: "website",
-    url: "https://readindo.com/about",
+    url: "https://Reagdindonstyf.com/about",
   },
   twitter: {
     card: "summary_large_image",
-    title: "About Us - Readindo.com",
-    description: "Learn about Readindo.com - your trusted source for technology, finance, business, career, and automobile content.",
+    title: "About Us - Reagdindonstyf.com",
+    description: "Learn about Reagdindonstyf.com - your trusted source for technology, finance, business, career, and automobile content.",
   },
 };
 
@@ -35,7 +35,7 @@ export default function About() {
           {/* Header */}
           <div className="text-center mb-12">
             <h1 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">
-              About Readindo.com
+              About Reagdindonstyf.com
             </h1>
             <p className="text-xl text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
               Your trusted source for insightful content on technology, finance, business, career development, and automobiles.
@@ -48,7 +48,7 @@ export default function About() {
             <section className="mb-12">
               <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">Our Mission</h2>
               <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-4">
-                At Readindo.com, we believe that knowledge is the key to success. Our mission is to provide high-quality, 
+                At Reagdindonstyf.com, we believe that knowledge is the key to success. Our mission is to provide high-quality, 
                 actionable content that helps our readers make informed decisions in their personal and professional lives.
               </p>
               <p className="text-gray-700 dark:text-gray-300 leading-relaxed">

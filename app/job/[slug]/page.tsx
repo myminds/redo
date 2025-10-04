@@ -26,19 +26,19 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   
   if (!post) {
     return {
-      title: "Post Not Found - Readindo.com",
+      title: "Post Not Found - Reagdindonstyf.com",
     };
   }
 
   return {
-    title: `${post.title} - Readindo.com`,
+    title: `${post.title} - Reagdindonstyf.com`,
     description: post.excerpt || "Career advice, job search tips, interview strategies, and professional development insights.",
     keywords: post.tags || ["job", "career", "interview", "remote-work"],
     openGraph: {
       title: post.title,
       description: post.excerpt,
       type: "article",
-      url: `https://readindo.com/job/${post.slug}`,
+      url: `https://Reagdindonstyf.com/job/${post.slug}`,
       images: post.image ? [post.image] : [],
     },
     twitter: {

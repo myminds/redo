@@ -10,18 +10,18 @@ export async function generateMetadata(): Promise<Metadata> {
   const posts = getPostsByCategory("technology");
   
   return {
-    title: "Technology Blog - Readindo.com",
+    title: "Technology Blog - Reagdindonstyf.com",
     description: "Latest technology news, reviews, and insights about AI, cybersecurity, smartphones, and tech innovations.",
     keywords: ["technology", "ai", "cybersecurity", "smartphones", "tech", "innovation"],
     openGraph: {
-      title: "Technology Blog - Readindo.com",
+      title: "Technology Blog - Reagdindonstyf.com",
       description: "Latest technology news, reviews, and insights about AI, cybersecurity, smartphones, and tech innovations.",
       type: "website",
-      url: "https://readindo.com/technology",
+      url: "https://Reagdindonstyf.com/technology",
     },
     twitter: {
       card: "summary_large_image",
-      title: "Technology Blog - Readindo.com",
+      title: "Technology Blog - Reagdindonstyf.com",
       description: "Latest technology news, reviews, and insights about AI, cybersecurity, smartphones, and tech innovations.",
     },
   };

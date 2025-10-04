@@ -19,29 +19,29 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Readindo.com - Technology, Finance, Business, Career & Automobile Blog",
-  description: "Readindo.com - Your trusted source for technology, finance, business, career, and automobile content. Expert insights and practical advice.",
+  title: "Reagdindonstyf.com - Technology, Finance, Business, Career & Automobile Blog",
+  description: "Reagdindonstyf.com - Your trusted source for technology, finance, business, career, and automobile content. Expert insights and practical advice.",
   keywords: ["technology", "finance", "business", "career", "automobile", "blog", "news", "tips", "guides"],
   authors: [{ name: "Readindo Team" }],
-  creator: "Readindo.com",
-  publisher: "Readindo.com",
+  creator: "Reagdindonstyf.com",
+  publisher: "Reagdindonstyf.com",
   formatDetection: {
     email: false,
     address: false,
     telephone: false,
   },
-  metadataBase: new URL("https://readindo.com"),
+  metadataBase: new URL("https://Reagdindonstyf.com"),
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://readindo.com",
-    siteName: "Readindo.com",
-    title: "Readindo.com - Technology, Finance, Business, Career & Automobile Blog",
+    url: "https://Reagdindonstyf.com",
+    siteName: "Reagdindonstyf.com",
+    title: "Reagdindonstyf.com - Technology, Finance, Business, Career & Automobile Blog",
     description: "Your trusted source for technology, finance, business, career, and automobile content. Expert insights and practical advice.",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Readindo.com - Technology, Finance, Business, Career & Automobile Blog",
+    title: "Reagdindonstyf.com - Technology, Finance, Business, Career & Automobile Blog",
     description: "Your trusted source for technology, finance, business, career, and automobile content. Expert insights and practical advice.",
   },
   robots: {
