@@ -7,9 +7,9 @@ import LeftSidebar from "../../../components/LeftSidebar";
 import RightSidebar from "../../../components/RightSidebar";
 
 type Props = {
-  params: {
+  params: Promise<{
     slug: string;
-  };
+  }>;
 };
 
 // Generate static params for all automobile posts
@@ -21,7 +21,8 @@ export async function generateStaticParams() {
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const post = getPost(params.slug);
+  const { slug } = await params;
+  const post = getPost(slug);
   
   if (!post) {
     return {
@@ -50,7 +51,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 }
 
 export default async function BlogDetailPage({ params }: Props) {
-  const post = getPost(params.slug);
+  const { slug } = await params;
+  const post = getPost(slug);
 
   if (!post) {
     notFound();
@@ -60,20 +62,20 @@ export default async function BlogDetailPage({ params }: Props) {
     <div className="font-sans min-h-screen bg-gradient-to-br from-gray-50 via-white to-blue-50 dark:from-gray-900 dark:via-black dark:to-gray-800">
       <div className="w-full px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col lg:flex-row gap-4 lg:gap-8">
-          {/* Left Sidebar */}
+        {/* Left Sidebar */}
           <LeftSidebar className="order-2 lg:order-1" />
-          
-          {/* Main Content */}
+
+        {/* Main Content */}
           <main className="flex-1 min-w-0 max-w-none order-1 lg:order-2">
-            <Link
-              href="/automobile"
+          <Link
+            href="/automobile"
               className="inline-flex items-center gap-2 mb-8 text-sm text-blue-600 dark:text-blue-400 hover:underline transition-colors duration-200"
-            >
+          >
               <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
               </svg>
               Back to Automobile Blog
-            </Link>
+          </Link>
             
             <article className="rounded-2xl border border-gray-200 dark:border-gray-700 p-4 sm:p-6 lg:p-8 bg-white dark:bg-gray-800 shadow-lg hover:shadow-xl transition-shadow duration-300">
               <header className="mb-8">
@@ -103,18 +105,18 @@ export default async function BlogDetailPage({ params }: Props) {
                 </div>
               </header>
               
-              {post.image && (
+            {post.image && (
                 <div className="w-full h-48 sm:h-64 lg:h-80 relative mb-6 lg:mb-8 overflow-hidden rounded-xl">
-                  <Image
-                    src={post.image}
-                    alt={post.title}
-                    fill
+                <Image
+                  src={post.image}
+                  alt={post.title}
+                  fill
                     className="object-cover"
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 70vw"
-                    priority
-                  />
-                </div>
-              )}
+                  priority
+                />
+              </div>
+            )}
               
               {post.excerpt && (
                 <p className="text-xl text-gray-700 dark:text-gray-300 leading-relaxed mb-6">
@@ -130,16 +132,16 @@ export default async function BlogDetailPage({ params }: Props) {
                       className="px-3 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 text-sm rounded-full"
                     >
                       #{tag}
-                    </span>
+              </span>
                   ))}
-                </div>
-              )}
+            </div>
+            )}
               
-              <div
+            <div
                 className="prose prose-lg prose-gray dark:prose-invert max-w-none prose-headings:text-gray-900 dark:prose-headings:text-white prose-p:text-gray-700 dark:prose-p:text-gray-300 prose-p:font-normal prose-p:leading-relaxed prose-headings:font-semibold prose-headings:tracking-tight"
-                dangerouslySetInnerHTML={{ __html: post.content || "" }}
-              />
-            </article>
+              dangerouslySetInnerHTML={{ __html: post.content || "" }}
+            />
+          </article>
           </main>
           
           {/* Right Sidebar */}
