@@ -1,12 +1,6 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  // Performance optimizations
-  experimental: {
-    optimizeCss: true,
-    optimizePackageImports: ['@next/font'],
-  },
-  
   // Image optimization
   images: {
     formats: ['image/webp', 'image/avif'],
