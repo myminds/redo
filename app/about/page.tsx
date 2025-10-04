@@ -54,8 +54,8 @@ export default function About() {
               <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
                 We cover a wide range of topics including cutting-edge technology trends, smart financial strategies, 
                 business insights, career advancement tips, and the latest in automotive innovation.
-              </p>
-            </section>
+          </p>
+        </section>
 
             {/* What We Cover */}
             <section className="mb-12">
@@ -160,7 +160,7 @@ export default function About() {
               <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">Get In Touch</h2>
               <div className="bg-blue-50 dark:bg-blue-900/20 p-6 rounded-lg">
                 <p className="text-gray-700 dark:text-gray-300 mb-4">
-                  Have questions, suggestions, or want to contribute? We'd love to hear from you!
+                  Have questions, suggestions, or want to contribute? We&apos;d love to hear from you!
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4">
                   <Link 

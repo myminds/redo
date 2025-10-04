@@ -87,7 +87,7 @@ export const getPost = cache((slug: string): Post | null => {
       tags: data.tags,
       content: data.content
     };
-  } catch (error) {
+  } catch {
     return null;
   }
 });

@@ -4,11 +4,8 @@ import { getPostsByCategory } from "../../lib/post";
 import type { Metadata } from "next";
 import LeftSidebar from "../../components/LeftSidebar";
 import RightSidebar from "../../components/RightSidebar";
-import Loading from "../../components/Loading";
 
 export async function generateMetadata(): Promise<Metadata> {
-  const posts = getPostsByCategory("automobile");
-  
   return {
     title: "Automobile Blog - Reagdindonstyf.com",
     description: "Read the latest blog posts and articles about automobiles, cars, bikes, and the automotive industry.",

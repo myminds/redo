@@ -15,7 +15,7 @@ export default function LeftSidebar({ className = "" }: { className?: string }) 
           <h3 className="text-base sm:text-lg font-bold text-gray-900 dark:text-white">Recent Posts</h3>
         </div>
         <div className="space-y-2 sm:space-y-3">
-          {recentPosts.map((post, index) => (
+          {recentPosts.map((post) => (
             <Link
               key={post.slug}
               href={`/${post.category}/${post.slug}`}

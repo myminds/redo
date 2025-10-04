@@ -4,11 +4,8 @@ import { getPostsByCategory } from "../../lib/post";
 import type { Metadata } from "next";
 import LeftSidebar from "../../components/LeftSidebar";
 import RightSidebar from "../../components/RightSidebar";
-import Loading from "../../components/Loading";
 
 export async function generateMetadata(): Promise<Metadata> {
-  const posts = getPostsByCategory("business");
-  
   return {
     title: "Business Blog - Reagdindonstyf.com",
     description: "Business insights, entrepreneurship tips, leadership advice, and strategies for business growth and success.",

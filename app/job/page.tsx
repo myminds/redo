@@ -4,11 +4,8 @@ import { getPostsByCategory } from "../../lib/post";
 import type { Metadata } from "next";
 import LeftSidebar from "../../components/LeftSidebar";
 import RightSidebar from "../../components/RightSidebar";
-import Loading from "../../components/Loading";
 
 export async function generateMetadata(): Promise<Metadata> {
-  const posts = getPostsByCategory("job");
-  
   return {
     title: "Job & Career Blog - Reagdindonstyf.com",
     description: "Career advice, job search tips, interview strategies, and professional development insights for career success.",
