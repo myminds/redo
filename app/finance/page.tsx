@@ -7,18 +7,18 @@ import RightSidebar from "../../components/RightSidebar";
 
 export async function generateMetadata(): Promise<Metadata> {
   return {
-    title: "Finance Blog - Reagdindonstyf.com",
+    title: "Finance Blog - RedoHelp",
     description: "Expert financial advice, investment strategies, cryptocurrency insights, and personal finance tips for financial success.",
     keywords: ["finance", "investment", "cryptocurrency", "personal-finance", "wealth-building"],
     openGraph: {
-      title: "Finance Blog - Reagdindonstyf.com",
+      title: "Finance Blog - RedoHelp",
       description: "Expert financial advice, investment strategies, cryptocurrency insights, and personal finance tips for financial success.",
       type: "website",
-      url: "https://Reagdindonstyf.com/finance",
+      url: "https://RedoHelp/finance",
     },
     twitter: {
       card: "summary_large_image",
-      title: "Finance Blog - Reagdindonstyf.com",
+      title: "Finance Blog - RedoHelp",
       description: "Expert financial advice, investment strategies, cryptocurrency insights, and personal finance tips for financial success.",
     },
   };

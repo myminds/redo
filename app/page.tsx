@@ -4,7 +4,7 @@ import { getAllPosts } from "../lib/post";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Reagdindonstyf.com - Technology, Finance, Business, Career & Automobile Blog",
+  title: "RedoHelp - Technology, Finance, Business, Career & Automobile Blog",
   description: "Your trusted source for technology, finance, business, career, and automobile content. Expert insights and practical advice.",
   keywords: ["technology", "finance", "business", "career", "automobile", "blog", "news", "tips", "guides"],
 };
@@ -18,21 +18,10 @@ export default function Home() {
       {/* Hero Section */}
       <section className="w-full flex flex-col items-center justify-center py-16 px-4 sm:px-8 bg-gradient-to-b from-blue-50 dark:from-[#181818] to-white dark:to-black">
         <div className="max-w-2xl w-full flex flex-col items-center text-center gap-6">
-          <Image
-            src="/next.svg"
-            alt="Reagdindonstyf.com Logo"
-            width={120}
-            height={25}
-            className="dark:invert mb-2"
-            priority
-            loading="eager"
-          />
           <h1 className="text-4xl sm:text-5xl font-bold text-gray-900 dark:text-white leading-tight">
-            Welcome to <span className="text-blue-600">Reagdindonstyf.com</span>
+            Welcome to <span className="text-blue-600">Tools Kit</span>
           </h1>
-          <p className="text-lg sm:text-xl text-gray-700 dark:text-gray-300">
-            Explore insightful blogs on <span className="font-semibold text-blue-600">Automobiles</span>, <span className="font-semibold text-green-600">Technology</span>, <span className="font-semibold text-purple-600">Finance</span>, <span className="font-semibold text-orange-600">Business</span>, and <span className="font-semibold text-red-600">Jobs</span>.
-          </p>
+          <p className="text-lg sm:text-xl text-gray-700 dark:text-gray-300">Where knowledge meets progress—your one stop for <span className="font-semibold text-blue-600">Automobiles</span>, <span className="font-semibold text-green-600">Technology</span>, <span className="font-semibold text-purple-600">Finance</span>, <span className="font-semibold text-orange-600">Business</span>, <span className="font-semibold text-red-600">Jobs</span> and smart <span className="font-semibold text-teal-600">Tools</span> to unlock productivity—crunch numbers, make conversions, and get answers faster than ever.</p>
           <div className="flex flex-col sm:flex-row gap-4 mt-4 w-full justify-center">
             <Link
               href="/automobile"
@@ -136,71 +125,83 @@ export default function Home() {
           Useful Tools
         </h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          <div className="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-200 dark:border-gray-700">
-            <div className="text-center">
-              <div className="text-4xl mb-3">📊</div>
-              <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-2">Investment Calculator</h3>
-              <p className="text-sm text-gray-600 dark:text-gray-400 mb-4">Calculate compound interest and investment returns</p>
-              <button className="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors duration-200 text-sm font-medium">
-                Use Tool
-              </button>
+          <Link href="/tools/investment-calculator" className="block">
+            <div className="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-200 dark:border-gray-700 cursor-pointer">
+              <div className="text-center">
+                <div className="text-4xl mb-3">📊</div>
+                <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-2">Investment Calculator</h3>
+                <p className="text-sm text-gray-600 dark:text-gray-400 mb-4">Calculate compound interest and investment returns</p>
+                <div className="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors duration-200 text-sm font-medium inline-block">
+                  Use Tool
+                </div>
+              </div>
             </div>
-          </div>
+          </Link>
 
-          <div className="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-200 dark:border-gray-700">
-            <div className="text-center">
-              <div className="text-4xl mb-3">🚗</div>
-              <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-2">Car EMI Calculator</h3>
-              <p className="text-sm text-gray-600 dark:text-gray-400 mb-4">Calculate monthly EMI for your dream car</p>
-              <button className="bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700 transition-colors duration-200 text-sm font-medium">
-                Use Tool
-              </button>
+          <Link href="/tools/emi-calculator" className="block">
+            <div className="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-200 dark:border-gray-700 cursor-pointer">
+              <div className="text-center">
+                <div className="text-4xl mb-3">🏦</div>
+                <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-2">EMI Calculator</h3>
+                <p className="text-sm text-gray-600 dark:text-gray-400 mb-4">Calculate EMI for home loans, personal loans, car loans & more</p>
+                <div className="bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700 transition-colors duration-200 text-sm font-medium inline-block">
+                  Use Tool
+                </div>
+              </div>
             </div>
-          </div>
+          </Link>
 
-          <div className="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-200 dark:border-gray-700">
-            <div className="text-center">
-              <div className="text-4xl mb-3">💼</div>
-              <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-2">Salary Calculator</h3>
-              <p className="text-sm text-gray-600 dark:text-gray-400 mb-4">Calculate take-home salary and deductions</p>
-              <button className="bg-purple-600 text-white px-4 py-2 rounded-lg hover:bg-purple-700 transition-colors duration-200 text-sm font-medium">
-                Use Tool
-              </button>
+          <Link href="/tools/salary-calculator" className="block">
+            <div className="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-200 dark:border-gray-700 cursor-pointer">
+              <div className="text-center">
+                <div className="text-4xl mb-3">💼</div>
+                <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-2">Salary Calculator</h3>
+                <p className="text-sm text-gray-600 dark:text-gray-400 mb-4">Calculate take-home salary, deductions & tax implications</p>
+                <div className="bg-purple-600 text-white px-4 py-2 rounded-lg hover:bg-purple-700 transition-colors duration-200 text-sm font-medium inline-block">
+                  Use Tool
+                </div>
+              </div>
             </div>
-          </div>
+          </Link>
 
-          <div className="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-200 dark:border-gray-700">
-            <div className="text-center">
-              <div className="text-4xl mb-3">🏠</div>
-              <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-2">Home Loan Calculator</h3>
-              <p className="text-sm text-gray-600 dark:text-gray-400 mb-4">Calculate home loan EMI and eligibility</p>
-              <button className="bg-orange-600 text-white px-4 py-2 rounded-lg hover:bg-orange-700 transition-colors duration-200 text-sm font-medium">
-                Use Tool
-              </button>
+          <Link href="/tools/home-loan-calculator" className="block">
+            <div className="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-200 dark:border-gray-700 cursor-pointer">
+              <div className="text-center">
+                <div className="text-4xl mb-3">🏠</div>
+                <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-2">Home Loan Calculator</h3>
+                <p className="text-sm text-gray-600 dark:text-gray-400 mb-4">Calculate home loan EMI and eligibility</p>
+                <div className="bg-orange-600 text-white px-4 py-2 rounded-lg hover:bg-orange-700 transition-colors duration-200 text-sm font-medium inline-block">
+                  Use Tool
+                </div>
+              </div>
             </div>
-          </div>
+          </Link>
 
-          <div className="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-200 dark:border-gray-700">
-            <div className="text-center">
-              <div className="text-4xl mb-3">📈</div>
-              <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-2">SIP Calculator</h3>
-              <p className="text-sm text-gray-600 dark:text-gray-400 mb-4">Calculate SIP returns and maturity amount</p>
-              <button className="bg-red-600 text-white px-4 py-2 rounded-lg hover:bg-red-700 transition-colors duration-200 text-sm font-medium">
-                Use Tool
-              </button>
+          <Link href="/tools/sip-calculator" className="block">
+            <div className="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-200 dark:border-gray-700 cursor-pointer">
+              <div className="text-center">
+                <div className="text-4xl mb-3">📈</div>
+                <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-2">SIP Calculator</h3>
+                <p className="text-sm text-gray-600 dark:text-gray-400 mb-4">Calculate SIP returns and maturity amount</p>
+                <div className="bg-red-600 text-white px-4 py-2 rounded-lg hover:bg-red-700 transition-colors duration-200 text-sm font-medium inline-block">
+                  Use Tool
+                </div>
+              </div>
             </div>
-          </div>
+          </Link>
 
-          <div className="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-200 dark:border-gray-700">
-            <div className="text-center">
-              <div className="text-4xl mb-3">💻</div>
-              <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-2">Tech Stack Builder</h3>
-              <p className="text-sm text-gray-600 dark:text-gray-400 mb-4">Build your perfect tech stack for projects</p>
-              <button className="bg-indigo-600 text-white px-4 py-2 rounded-lg hover:bg-indigo-700 transition-colors duration-200 text-sm font-medium">
-                Use Tool
-              </button>
+          <Link href="/tools/tech-stack-builder" className="block">
+            <div className="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-200 dark:border-gray-700 cursor-pointer">
+              <div className="text-center">
+                <div className="text-4xl mb-3">💻</div>
+                <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-2">Tech Stack Builder</h3>
+                <p className="text-sm text-gray-600 dark:text-gray-400 mb-4">Build your perfect tech stack for projects</p>
+                <div className="bg-indigo-600 text-white px-4 py-2 rounded-lg hover:bg-indigo-700 transition-colors duration-200 text-sm font-medium inline-block">
+                  Use Tool
+                </div>
+              </div>
             </div>
-          </div>
+          </Link>
         </div>
       </section>
 

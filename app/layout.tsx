@@ -19,29 +19,34 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Reagdindonstyf.com - Technology, Finance, Business, Career & Automobile Blog",
-  description: "Reagdindonstyf.com - Your trusted source for technology, finance, business, career, and automobile content. Expert insights and practical advice.",
+  title: "RedoHelp - Technology, Finance, Business, Career & Automobile Blog",
+  description: "RedoHelp - Your trusted source for technology, finance, business, career, and automobile content. Expert insights and practical advice.",
   keywords: ["technology", "finance", "business", "career", "automobile", "blog", "news", "tips", "guides"],
   authors: [{ name: "Readindo Team" }],
-  creator: "Reagdindonstyf.com",
-  publisher: "Reagdindonstyf.com",
+  creator: "RedoHelp",
+  publisher: "RedoHelp",
+  icons: {
+    icon: "/favicon.PNG",
+    shortcut: "/favicon.PNG",
+    apple: "/favicon.PNG",
+  },
   formatDetection: {
     email: false,
     address: false,
     telephone: false,
   },
-  metadataBase: new URL("https://Reagdindonstyf.com"),
+  metadataBase: new URL("https://RedoHelp"),
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://Reagdindonstyf.com",
-    siteName: "Reagdindonstyf.com",
-    title: "Reagdindonstyf.com - Technology, Finance, Business, Career & Automobile Blog",
+    url: "https://RedoHelp",
+    siteName: "RedoHelp",
+    title: "RedoHelp - Technology, Finance, Business, Career & Automobile Blog",
     description: "Your trusted source for technology, finance, business, career, and automobile content. Expert insights and practical advice.",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Reagdindonstyf.com - Technology, Finance, Business, Career & Automobile Blog",
+    title: "RedoHelp - Technology, Finance, Business, Career & Automobile Blog",
     description: "Your trusted source for technology, finance, business, career, and automobile content. Expert insights and practical advice.",
   },
   robots: {

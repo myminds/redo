@@ -26,19 +26,19 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   
   if (!post) {
     return {
-      title: "Post Not Found - Reagdindonstyf.com",
+      title: "Post Not Found - RedoHelp",
     };
   }
 
   return {
-    title: `${post.title} - Reagdindonstyf.com`,
+    title: `${post.title} - RedoHelp`,
     description: post.excerpt || "Expert financial advice, investment strategies, cryptocurrency insights, and personal finance tips.",
     keywords: post.tags || ["finance", "investment", "cryptocurrency", "personal-finance"],
     openGraph: {
       title: post.title,
       description: post.excerpt,
       type: "article",
-      url: `https://Reagdindonstyf.com/finance/${post.slug}`,
+      url: `https://RedoHelp/finance/${post.slug}`,
       images: post.image ? [post.image] : [],
     },
     twitter: {

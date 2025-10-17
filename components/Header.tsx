@@ -10,18 +10,16 @@ export default function Header() {
     <header className="fixed top-0 left-0 right-0 z-50 w-full px-4 sm:px-6 py-3 sm:py-4 border-b border-gray-200 dark:border-gray-700 bg-white dark:bg-black backdrop-blur-sm bg-opacity-95 dark:bg-opacity-95">
       <div className="flex items-center justify-between">
         {/* Logo */}
-        <Link href="/" className="flex items-center gap-2">
+        <Link href="/" className="flex items-center gap-3 min-h-[44px]">
           <Image
-            src="/next.svg"
-            alt="Reagdindonstyf.com Logo"
-            className="h-5 sm:h-6 w-auto dark:invert"
-            width={120}
-            height={25}
+            src="/logo.png"
+            alt="Readindonstyf.com Logo"
+            width={200}
+            height={44}
+            style={{ height: '44px', width: 'auto', minWidth: '120px' }}
+            className="dark:invert"
             priority
           />
-          <span className="font-bold text-base sm:text-lg tracking-tight text-gray-900 dark:text-white hidden sm:block">
-            Reagdindonstyf.com
-          </span>
         </Link>
 
         {/* Desktop Navigation */}

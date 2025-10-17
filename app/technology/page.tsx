@@ -7,18 +7,18 @@ import RightSidebar from "../../components/RightSidebar";
 
 export async function generateMetadata(): Promise<Metadata> {
   return {
-    title: "Technology Blog - Reagdindonstyf.com",
+    title: "Technology Blog - RedoHelp",
     description: "Latest technology news, reviews, and insights about AI, cybersecurity, smartphones, and tech innovations.",
     keywords: ["technology", "ai", "cybersecurity", "smartphones", "tech", "innovation"],
     openGraph: {
-      title: "Technology Blog - Reagdindonstyf.com",
+      title: "Technology Blog - RedoHelp",
       description: "Latest technology news, reviews, and insights about AI, cybersecurity, smartphones, and tech innovations.",
       type: "website",
-      url: "https://Reagdindonstyf.com/technology",
+      url: "https://RedoHelp/technology",
     },
     twitter: {
       card: "summary_large_image",
-      title: "Technology Blog - Reagdindonstyf.com",
+      title: "Technology Blog - RedoHelp",
       description: "Latest technology news, reviews, and insights about AI, cybersecurity, smartphones, and tech innovations.",
     },
   };

@@ -7,18 +7,18 @@ import RightSidebar from "../../components/RightSidebar";
 
 export async function generateMetadata(): Promise<Metadata> {
   return {
-    title: "Job & Career Blog - Reagdindonstyf.com",
+    title: "Job & Career Blog - RedoHelp",
     description: "Career advice, job search tips, interview strategies, and professional development insights for career success.",
     keywords: ["job", "career", "interview", "remote-work", "professional-development"],
     openGraph: {
-      title: "Job & Career Blog - Reagdindonstyf.com",
+      title: "Job & Career Blog - RedoHelp",
       description: "Career advice, job search tips, interview strategies, and professional development insights for career success.",
       type: "website",
-      url: "https://Reagdindonstyf.com/job",
+      url: "https://RedoHelp/job",
     },
     twitter: {
       card: "summary_large_image",
-      title: "Job & Career Blog - Reagdindonstyf.com",
+      title: "Job & Career Blog - RedoHelp",
       description: "Career advice, job search tips, interview strategies, and professional development insights for career success.",
     },
   };

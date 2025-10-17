@@ -26,19 +26,19 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   
   if (!post) {
     return {
-      title: "Post Not Found - Reagdindonstyf.com",
+      title: "Post Not Found - RedoHelp",
     };
   }
 
   return {
-    title: `${post.title} - Reagdindonstyf.com`,
+    title: `${post.title} - RedoHelp`,
     description: post.excerpt || "Read the latest blog posts and articles about automobiles, cars, bikes, and the automotive industry.",
     keywords: post.tags || ["automobile", "cars", "bikes", "automotive"],
     openGraph: {
       title: post.title,
       description: post.excerpt,
       type: "article",
-      url: `https://Reagdindonstyf.com/automobile/${post.slug}`,
+      url: `https://RedoHelp/automobile/${post.slug}`,
       images: post.image ? [post.image] : [],
     },
     twitter: {

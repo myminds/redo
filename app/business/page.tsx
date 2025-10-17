@@ -7,18 +7,18 @@ import RightSidebar from "../../components/RightSidebar";
 
 export async function generateMetadata(): Promise<Metadata> {
   return {
-    title: "Business Blog - Reagdindonstyf.com",
+    title: "Business Blog - RedoHelp",
     description: "Business insights, entrepreneurship tips, leadership advice, and strategies for business growth and success.",
     keywords: ["business", "entrepreneurship", "leadership", "startup", "business-growth"],
     openGraph: {
-      title: "Business Blog - Reagdindonstyf.com",
+      title: "Business Blog - RedoHelp",
       description: "Business insights, entrepreneurship tips, leadership advice, and strategies for business growth and success.",
       type: "website",
-      url: "https://Reagdindonstyf.com/business",
+      url: "https://RedoHelp/business",
     },
     twitter: {
       card: "summary_large_image",
-      title: "Business Blog - Reagdindonstyf.com",
+      title: "Business Blog - RedoHelp",
       description: "Business insights, entrepreneurship tips, leadership advice, and strategies for business growth and success.",
     },
   };

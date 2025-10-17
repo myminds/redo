@@ -7,18 +7,18 @@ import RightSidebar from "../../components/RightSidebar";
 
 export async function generateMetadata(): Promise<Metadata> {
   return {
-    title: "Automobile Blog - Reagdindonstyf.com",
+    title: "Automobile Blog - RedoHelp",
     description: "Read the latest blog posts and articles about automobiles, cars, bikes, and the automotive industry.",
     keywords: ["automobile", "cars", "bikes", "automotive", "reviews", "tips"],
     openGraph: {
-      title: "Automobile Blog - Reagdindonstyf.com",
+      title: "Automobile Blog - RedoHelp",
       description: "Latest news, reviews, and tips about cars, bikes, and the world of automobiles.",
       type: "website",
-      url: "https://Reagdindonstyf.com/automobile",
+      url: "https://RedoHelp/automobile",
     },
     twitter: {
       card: "summary_large_image",
-      title: "Automobile Blog - Reagdindonstyf.com",
+      title: "Automobile Blog - RedoHelp",
       description: "Latest news, reviews, and tips about cars, bikes, and the world of automobiles.",
     },
   };
