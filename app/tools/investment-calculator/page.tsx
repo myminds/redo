@@ -23,7 +23,7 @@ export default function InvestmentCalculator() {
   const [years, setYears] = useState<string>('10');
   const [result, setResult] = useState<InvestmentResult | null>(null);
 
-  const calculateInvestment = () => {
+  const calculateInvestment = useCallback(() => {
     const P = parseFloat(principal);
     const PMT = parseFloat(monthlyInvestment);
     const r = parseFloat(annualReturn) / 100 / 12; // Monthly interest rate
@@ -68,7 +68,7 @@ export default function InvestmentCalculator() {
       finalAmount: parseFloat(finalAmount.toFixed(2)),
       yearlyBreakdown
     });
-  };
+  }, [principal, monthlyInvestment, annualReturn, years]);
 
   useEffect(() => {
     calculateInvestment();

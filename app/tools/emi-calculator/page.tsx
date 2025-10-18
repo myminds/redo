@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 
 interface EMIResult {
   emi: number;
@@ -24,7 +24,7 @@ export default function EMICalculator() {
   const [showSchedule] = useState(true);
 
   // Calculate EMI
-  const calculateEMI = () => {
+  const calculateEMI = useCallback(() => {
     const P = parseFloat(principal);
     const R = parseFloat(rate) / 100 / 12; // Monthly interest rate
     const N = tenureType === 'years' ? parseFloat(tenure) * 12 : parseFloat(tenure);
@@ -62,7 +62,7 @@ export default function EMICalculator() {
       totalInterest: parseFloat(totalInterest.toFixed(2)),
       schedule
     });
-  };
+  }, [principal, rate, tenure, tenureType]);
 
   useEffect(() => {
     calculateEMI();

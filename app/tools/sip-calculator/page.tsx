@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 
 interface SIPResult {
   monthlyInvestment: number;
@@ -21,7 +21,7 @@ export default function SIPCalculator() {
   const [years, setYears] = useState<string>('10');
   const [result, setResult] = useState<SIPResult | null>(null);
 
-  const calculateSIP = () => {
+  const calculateSIP = useCallback(() => {
     const PMT = parseFloat(monthlyInvestment);
     const r = parseFloat(annualReturn) / 100 / 12; // Monthly interest rate
     const n = parseFloat(years) * 12; // Total months
@@ -59,7 +59,7 @@ export default function SIPCalculator() {
       finalAmount: parseFloat(fv.toFixed(2)),
       yearlyBreakdown
     });
-  };
+  }, [monthlyInvestment, annualReturn, years]);
 
   useEffect(() => {
     calculateSIP();

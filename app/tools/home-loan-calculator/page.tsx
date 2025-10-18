@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 
 interface HomeLoanResult {
   loanAmount: number;
@@ -25,7 +25,7 @@ export default function HomeLoanCalculator() {
   const [income, setIncome] = useState<string>('100000');
   const [result, setResult] = useState<HomeLoanResult | null>(null);
 
-  const calculateHomeLoan = () => {
+  const calculateHomeLoan = useCallback(() => {
     const propertyVal = parseFloat(propertyValue);
     const downPay = parseFloat(downPayment);
     const rate = parseFloat(interestRate) / 100 / 12; // Monthly interest rate
@@ -87,7 +87,7 @@ export default function HomeLoanCalculator() {
       eligibility: parseFloat(eligibleLoanAmount.toFixed(2)),
       schedule
     });
-  };
+  }, [propertyValue, downPayment, interestRate, tenure, income]);
 
   useEffect(() => {
     calculateHomeLoan();

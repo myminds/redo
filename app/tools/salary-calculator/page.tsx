@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 
 interface SalaryBreakdown {
   grossSalary: number;
@@ -61,7 +61,7 @@ export default function SalaryCalculator() {
     return tax;
   };
 
-  const calculateSalary = () => {
+  const calculateSalary = useCallback(() => {
     const ctcAmount = parseFloat(ctc);
     const basicPercent = parseFloat(basicPercentage) / 100;
     const hraPercent = parseFloat(hraPercentage) / 100;
@@ -115,7 +115,7 @@ export default function SalaryCalculator() {
       totalDeductions: parseFloat(totalDeductions.toFixed(2)),
       ctc: ctcAmount
     });
-  };
+  }, [ctc, basicPercentage, hraPercentage, daPercentage, pfPercentage, esiPercentage, professionalTax]);
 
   useEffect(() => {
     calculateSalary();
