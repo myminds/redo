@@ -12,10 +12,10 @@ export default function AdvancedCalculator() {
   const [memory, setMemory] = useState(0);
   const [isScientific, setIsScientific] = useState(false);
   const [isDarkMode, setIsDarkMode] = useState(false);
-  const [expression, setExpression] = useState('');
-  const [showExpression, setShowExpression] = useState(false);
+  const [expression] = useState('');
+  const [showExpression] = useState(false);
   const [angleMode, setAngleMode] = useState<'DEG' | 'RAD'>('DEG');
-  const [precision, setPrecision] = useState(10);
+  const [precision] = useState(10);
   const [showConstants, setShowConstants] = useState(false);
   const [showConverter, setShowConverter] = useState(false);
   const [converterType, setConverterType] = useState('length');
@@ -52,7 +52,7 @@ export default function AdvancedCalculator() {
 
     window.addEventListener('keydown', handleKeyPress);
     return () => window.removeEventListener('keydown', handleKeyPress);
-  }, [display, previousValue, operation, waitingForOperand]);
+  }, []);
 
   const inputNumber = useCallback((num: string) => {
     if (waitingForOperand) {
@@ -372,7 +372,7 @@ export default function AdvancedCalculator() {
     setShowConstants(false);
   };
 
-  const Button = ({ onClick, className = '', children, ...props }: any) => (
+  const Button = ({ onClick, className = '', children, ...props }: React.ButtonHTMLAttributes<HTMLButtonElement> & { onClick?: () => void }) => (
     <button
       onClick={onClick}
       className={`h-10 rounded-lg font-medium text-base transition-all duration-200 hover:scale-105 active:scale-95 ${className}`}

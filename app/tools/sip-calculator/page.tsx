@@ -1,7 +1,6 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import Link from 'next/link';
 
 interface SIPResult {
   monthlyInvestment: number;
@@ -64,7 +63,7 @@ export default function SIPCalculator() {
 
   useEffect(() => {
     calculateSIP();
-  }, [monthlyInvestment, annualReturn, years]);
+  }, [monthlyInvestment, annualReturn, years, calculateSIP]);
 
   const formatCurrency = (amount: number) => {
     return new Intl.NumberFormat('en-IN', {
@@ -341,7 +340,7 @@ export default function SIPCalculator() {
                 <li>Start early for maximum benefit</li>
                 <li>Increase SIP amount annually</li>
                 <li>Stay invested for long term</li>
-                <li>Don't stop during market falls</li>
+                <li>Don&apos;t stop during market falls</li>
               </ul>
             </div>
           </div>

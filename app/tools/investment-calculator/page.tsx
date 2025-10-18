@@ -1,7 +1,6 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import Link from 'next/link';
 
 interface InvestmentResult {
   principal: number;
@@ -73,7 +72,7 @@ export default function InvestmentCalculator() {
 
   useEffect(() => {
     calculateInvestment();
-  }, [principal, monthlyInvestment, annualReturn, years]);
+  }, [principal, monthlyInvestment, annualReturn, years, calculateInvestment]);
 
   const formatCurrency = (amount: number) => {
     return new Intl.NumberFormat('en-IN', {

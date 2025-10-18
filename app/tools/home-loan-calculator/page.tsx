@@ -1,7 +1,6 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import Link from 'next/link';
 
 interface HomeLoanResult {
   loanAmount: number;
@@ -92,7 +91,7 @@ export default function HomeLoanCalculator() {
 
   useEffect(() => {
     calculateHomeLoan();
-  }, [propertyValue, downPayment, interestRate, tenure, income]);
+  }, [propertyValue, downPayment, interestRate, tenure, income, calculateHomeLoan]);
 
   const formatCurrency = (amount: number) => {
     return new Intl.NumberFormat('en-IN', {

@@ -1,7 +1,6 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import Link from 'next/link';
 
 interface SalaryBreakdown {
   grossSalary: number;
@@ -33,7 +32,7 @@ export default function SalaryCalculator() {
   const [esiPercentage, setEsiPercentage] = useState<string>('0.75');
   const [professionalTax, setProfessionalTax] = useState<string>('200');
   const [result, setResult] = useState<SalaryBreakdown | null>(null);
-  const [showBreakdown, setShowBreakdown] = useState(true);
+  const [showBreakdown] = useState(true);
 
   // Indian Income Tax Slabs for FY 2024-25
   const taxSlabs: TaxSlab[] = [
@@ -120,7 +119,7 @@ export default function SalaryCalculator() {
 
   useEffect(() => {
     calculateSalary();
-  }, [ctc, basicPercentage, hraPercentage, daPercentage, pfPercentage, esiPercentage, professionalTax]);
+  }, [ctc, basicPercentage, hraPercentage, daPercentage, pfPercentage, esiPercentage, professionalTax, calculateSalary]);
 
   const formatCurrency = (amount: number) => {
     return new Intl.NumberFormat('en-IN', {
@@ -128,10 +127,6 @@ export default function SalaryCalculator() {
       currency: 'INR',
       maximumFractionDigits: 0
     }).format(amount);
-  };
-
-  const formatNumber = (num: number) => {
-    return new Intl.NumberFormat('en-IN').format(num);
   };
 
   return (

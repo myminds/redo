@@ -1,7 +1,6 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import Link from 'next/link';
 
 interface EMIResult {
   emi: number;
@@ -22,7 +21,7 @@ export default function EMICalculator() {
   const [tenure, setTenure] = useState<string>('20');
   const [tenureType, setTenureType] = useState<'years' | 'months'>('years');
   const [result, setResult] = useState<EMIResult | null>(null);
-  const [showSchedule, setShowSchedule] = useState(true);
+  const [showSchedule] = useState(true);
 
   // Calculate EMI
   const calculateEMI = () => {
@@ -67,7 +66,7 @@ export default function EMICalculator() {
 
   useEffect(() => {
     calculateEMI();
-  }, [principal, rate, tenure, tenureType]);
+  }, [principal, rate, tenure, tenureType, calculateEMI]);
 
   const formatCurrency = (amount: number) => {
     return new Intl.NumberFormat('en-IN', {
@@ -75,10 +74,6 @@ export default function EMICalculator() {
       currency: 'INR',
       maximumFractionDigits: 0
     }).format(amount);
-  };
-
-  const formatNumber = (num: number) => {
-    return new Intl.NumberFormat('en-IN').format(num);
   };
 
   return (
