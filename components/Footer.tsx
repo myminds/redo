@@ -2,7 +2,7 @@ import Link from 'next/link';
 
 export default function Footer() {
     return (
-        <footer className="bg-gray-50 dark:bg-gray-900 py-8 mt-16">
+        <footer className="bg-gray-50 dark:bg-gray-900 py-8 mt-16 print:hidden">
             <div className="max-w-6xl mx-auto px-4 sm:px-8">
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-6">
                     {/* Quick Links */}
@@ -42,6 +42,16 @@ export default function Footer() {
                             <li>
                                 <Link href="/tools/tech-stack-builder" className="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
                                     Tech Stack Builder
+                                </Link>
+                            </li>
+                            <li>
+                                <Link href="/tools/invoice-generator" className="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
+                                    Invoice Generator
+                                </Link>
+                            </li>
+                            <li>
+                                <Link href="/tools/rent-slip-generator" className="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
+                                    Rent Slip Generator
                                 </Link>
                             </li>
                             <li>
@@ -116,6 +126,16 @@ export default function Footer() {
                             <li>
                                 <Link href="/tools/tech-stack-builder" className="text-gray-600 dark:text-gray-400 hover:text-green-600 dark:hover:text-green-400 transition-colors">
                                     💻 Tech Stack Builder
+                                </Link>
+                            </li>
+                            <li>
+                                <Link href="/tools/invoice-generator" className="text-gray-600 dark:text-gray-400 hover:text-green-600 dark:hover:text-green-400 transition-colors">
+                                    📄 Invoice Generator
+                                </Link>
+                            </li>
+                            <li>
+                                <Link href="/tools/rent-slip-generator" className="text-gray-600 dark:text-gray-400 hover:text-green-600 dark:hover:text-green-400 transition-colors">
+                                    🏠 Rent Slip Generator
                                 </Link>
                             </li>
                             <li>

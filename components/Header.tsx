@@ -7,7 +7,7 @@ export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 w-full px-4 sm:px-6 py-3 sm:py-4 border-b border-gray-200 dark:border-gray-700 bg-white dark:bg-black backdrop-blur-sm bg-opacity-95 dark:bg-opacity-95">
+    <header className="fixed top-0 left-0 right-0 z-50 w-full px-4 sm:px-6 py-3 sm:py-4 border-b border-gray-200 dark:border-gray-700 bg-white dark:bg-black backdrop-blur-sm bg-opacity-95 dark:bg-opacity-95 print:hidden">
       <div className="flex items-center justify-between">
         {/* Logo */}
         <Link href="/" className="flex items-center gap-3 min-h-[44px]">
