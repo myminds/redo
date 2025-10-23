@@ -14,7 +14,7 @@ export async function generateMetadata(): Promise<Metadata> {
       title: "Business Blog - RedoHelp",
       description: "Business insights, entrepreneurship tips, leadership advice, and strategies for business growth and success.",
       type: "website",
-      url: "https://RedoHelp/business",
+      url: "https://redohelp.com/business",
     },
     twitter: {
       card: "summary_large_image",

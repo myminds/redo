@@ -14,7 +14,7 @@ export async function generateMetadata(): Promise<Metadata> {
       title: "Job & Career Blog - RedoHelp",
       description: "Career advice, job search tips, interview strategies, and professional development insights for career success.",
       type: "website",
-      url: "https://RedoHelp/job",
+      url: "https://redohelp.com/job",
     },
     twitter: {
       card: "summary_large_image",

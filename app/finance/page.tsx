@@ -14,7 +14,7 @@ export async function generateMetadata(): Promise<Metadata> {
       title: "Finance Blog - RedoHelp",
       description: "Expert financial advice, investment strategies, cryptocurrency insights, and personal finance tips for financial success.",
       type: "website",
-      url: "https://RedoHelp/finance",
+      url: "https://redohelp.com/finance",
     },
     twitter: {
       card: "summary_large_image",

@@ -14,7 +14,7 @@ export async function generateMetadata(): Promise<Metadata> {
       title: "Automobile Blog - RedoHelp",
       description: "Latest news, reviews, and tips about cars, bikes, and the world of automobiles.",
       type: "website",
-      url: "https://RedoHelp/automobile",
+      url: "https://redohelp.com/automobile",
     },
     twitter: {
       card: "summary_large_image",

@@ -9,7 +9,7 @@ export const metadata: Metadata = {
     title: "About Us - RedoHelp",
     description: "Learn about RedoHelp - your trusted source for technology, finance, business, career, and automobile content.",
     type: "website",
-    url: "https://RedoHelp/about",
+    url: "https://redohelp.com/about",
   },
   twitter: {
     card: "summary_large_image",

@@ -35,11 +35,11 @@ export const metadata: Metadata = {
     address: false,
     telephone: false,
   },
-  metadataBase: new URL("https://RedoHelp"),
+  metadataBase: new URL("https://redohelp.com"),
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://RedoHelp",
+    url: "https://redohelp.com",
     siteName: "RedoHelp",
     title: "RedoHelp - Technology, Finance, Business, Career & Automobile Blog",
     description: "Your trusted source for technology, finance, business, career, and automobile content. Expert insights and practical advice.",

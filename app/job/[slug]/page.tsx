@@ -38,7 +38,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       title: post.title,
       description: post.excerpt,
       type: "article",
-      url: `https://RedoHelp/job/${post.slug}`,
+      url: `https://redohelp.com/job/${post.slug}`,
       images: post.image ? [post.image] : [],
     },
     twitter: {
