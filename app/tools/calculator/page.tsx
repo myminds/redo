@@ -12,10 +12,10 @@ export default function AdvancedCalculator() {
   const [memory, setMemory] = useState(0);
   const [isScientific, setIsScientific] = useState(false);
   const [isDarkMode, setIsDarkMode] = useState(false);
-  const [expression] = useState('');
-  const [showExpression] = useState(false);
+  // const [expression] = useState('');
+  // const [showExpression] = useState(false);
   const [angleMode, setAngleMode] = useState<'DEG' | 'RAD'>('DEG');
-  const [precision] = useState(10);
+  // const [precision] = useState(10);
   const [showConstants, setShowConstants] = useState(false);
   const [showConverter, setShowConverter] = useState(false);
   const [converterType, setConverterType] = useState('length');
