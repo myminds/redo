@@ -75,6 +75,7 @@ export default function RootLayout({
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="theme-color" content="#ffffff" />
         <meta name="color-scheme" content="light dark" />
+        <meta name="google-site-verification" content="W_mC3vHYTBckULfbbW8Bvrb-KffGGxbaOsoSfvQmIPA" />
       </head>
       <body className="antialiased pt-16 sm:pt-20 bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100">
         <Header />
