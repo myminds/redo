@@ -71,7 +71,7 @@ export default function InvoiceGenerator() {
 
   const [showPreview, setShowPreview] = useState(false);
 
-  const updateInvoiceData = useCallback((field: string, value: any) => {
+  const updateInvoiceData = useCallback((field: string, value: string | number) => {
     setInvoiceData(prev => ({
       ...prev,
       [field]: value
@@ -98,7 +98,7 @@ export default function InvoiceGenerator() {
     }));
   }, []);
 
-  const updateItem = useCallback((id: string, field: string, value: any) => {
+  const updateItem = useCallback((id: string, field: string, value: string | number) => {
     setInvoiceData(prev => ({
       ...prev,
       items: prev.items.map(item => {
@@ -433,7 +433,7 @@ export default function InvoiceGenerator() {
                 </div>
                 
                 <div className="space-y-4">
-                  {invoiceData.items.map((item, index) => (
+                  {invoiceData.items.map((item) => (
                     <div key={item.id} className="grid grid-cols-12 gap-2 items-end">
                       <div className="col-span-5">
                         <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">

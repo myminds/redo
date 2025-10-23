@@ -91,7 +91,7 @@ export default function RentSlipGenerator() {
 
   const [showPreview, setShowPreview] = useState(false);
 
-  const updateRentSlipData = useCallback((field: string, value: any) => {
+  const updateRentSlipData = useCallback((field: string, value: string | number) => {
     setRentSlipData(prev => ({
       ...prev,
       [field]: value
@@ -128,7 +128,7 @@ export default function RentSlipGenerator() {
     }));
   }, []);
 
-  const updateRentDetails = useCallback((field: string, value: any) => {
+  const updateRentDetails = useCallback((field: string, value: string | number) => {
     setRentSlipData(prev => {
       const updatedRentDetails = {
         ...prev.rentDetails,

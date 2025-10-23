@@ -115,7 +115,7 @@ export default function SalaryCalculator() {
       totalDeductions: parseFloat(totalDeductions.toFixed(2)),
       ctc: ctcAmount
     });
-  }, [ctc, basicPercentage, hraPercentage, daPercentage, pfPercentage, esiPercentage, professionalTax]);
+  }, [ctc, basicPercentage, hraPercentage, daPercentage, pfPercentage, esiPercentage, professionalTax, calculateIncomeTax]);
 
   useEffect(() => {
     calculateSalary();

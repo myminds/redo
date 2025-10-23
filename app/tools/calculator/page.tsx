@@ -23,37 +23,6 @@ export default function AdvancedCalculator() {
   const [converterTo, setConverterTo] = useState('kilometer');
   const [converterValue, setConverterValue] = useState('1');
 
-  // Keyboard support
-  useEffect(() => {
-    const handleKeyPress = (event: KeyboardEvent) => {
-      const { key } = event;
-      
-      if (key >= '0' && key <= '9') {
-        inputNumber(key);
-      } else if (key === '.') {
-        inputDecimal();
-      } else if (key === '+') {
-        performOperation('+');
-      } else if (key === '-') {
-        performOperation('-');
-      } else if (key === '*') {
-        performOperation('×');
-      } else if (key === '/') {
-        event.preventDefault();
-        performOperation('÷');
-      } else if (key === 'Enter' || key === '=') {
-        calculate();
-      } else if (key === 'Escape') {
-        clear();
-      } else if (key === 'Backspace') {
-        backspace();
-      }
-    };
-
-    window.addEventListener('keydown', handleKeyPress);
-    return () => window.removeEventListener('keydown', handleKeyPress);
-  }, []);
-
   const inputNumber = useCallback((num: string) => {
     if (waitingForOperand) {
       setDisplay(num);
@@ -417,6 +386,37 @@ export default function AdvancedCalculator() {
       {label}
     </Button>
   );
+
+  // Keyboard support
+  useEffect(() => {
+    const handleKeyPress = (event: KeyboardEvent) => {
+      const { key } = event;
+      
+      if (key >= '0' && key <= '9') {
+        inputNumber(key);
+      } else if (key === '.') {
+        inputDecimal();
+      } else if (key === '+') {
+        performOperation('+');
+      } else if (key === '-') {
+        performOperation('-');
+      } else if (key === '*') {
+        performOperation('×');
+      } else if (key === '/') {
+        event.preventDefault();
+        performOperation('÷');
+      } else if (key === 'Enter' || key === '=') {
+        calculate();
+      } else if (key === 'Escape') {
+        clear();
+      } else if (key === 'Backspace') {
+        backspace();
+      }
+    };
+
+    window.addEventListener('keydown', handleKeyPress);
+    return () => window.removeEventListener('keydown', handleKeyPress);
+  }, [backspace, calculate, clear, inputDecimal, inputNumber, performOperation]);
 
   return (
     <div className={`min-h-screen transition-colors duration-300 ${isDarkMode ? 'bg-gray-900' : 'bg-gray-100'}`}>
