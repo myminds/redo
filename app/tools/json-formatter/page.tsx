@@ -4,25 +4,26 @@ import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import AceEditor from 'react-ace';
 import 'ace-builds/src-noconflict/mode-json';
+import 'ace-builds/src-noconflict/mode-xml';
+import 'ace-builds/src-noconflict/mode-text';
 import 'ace-builds/src-noconflict/theme-monokai';
 import 'ace-builds/src-noconflict/theme-github';
 import 'ace-builds/src-noconflict/ext-language_tools';
 import 'ace-builds/src-noconflict/ext-searchbox';
+import type { Ace } from 'ace-builds';
 
 export default function JsonFormatter() {
   const [inputJson, setInputJson] = useState('');
   const [formattedJson, setFormattedJson] = useState('');
-  const [error, setError] = useState('');
   const [minifiedJson, setMinifiedJson] = useState('');
   const [isFormatted, setIsFormatted] = useState(false);
   const [previewJson, setPreviewJson] = useState('');
+  const [error, setError] = useState('');
   const [previewError, setPreviewError] = useState('');
   const [indentSize, setIndentSize] = useState(2);
   const [isAutoFormat, setIsAutoFormat] = useState(true);
-  const [inputEditor, setInputEditor] = useState<any>(null);
-  const [previewEditor, setPreviewEditor] = useState<any>(null);
-  const [showSearch, setShowSearch] = useState(false);
-  const [searchTerm, setSearchTerm] = useState('');
+  const [inputEditor, setInputEditor] = useState<Ace.Editor | null>(null);
+  const [previewEditor, setPreviewEditor] = useState<Ace.Editor | null>(null);
   const [isFullscreen, setIsFullscreen] = useState(false);
   const [fetchUrl, setFetchUrl] = useState('');
   const [curlCommand, setCurlCommand] = useState('');
@@ -250,7 +251,7 @@ export default function JsonFormatter() {
     }
   };
 
-  const jsonToXml = (obj: any, rootName: string = 'root', isRoot: boolean = true, indent: string = ''): string => {
+  const jsonToXml = (obj: unknown, rootName: string = 'root', isRoot: boolean = true, indent: string = ''): string => {
     const xmlDeclaration = isRoot ? '<?xml version="1.0" encoding="UTF-8"?>\n' : '';
     
     if (typeof obj === 'string') {
@@ -266,17 +267,17 @@ export default function JsonFormatter() {
       if (obj.length === 0) {
         return xmlDeclaration + `${indent}<${rootName}></${rootName}>`;
       }
-      const items = obj.map((item, index) => jsonToXml(item, `${rootName}_item`, false, indent + '  ')).join('\n');
+      const items = obj.map((item) => jsonToXml(item, `${rootName}_item`, false, indent + '  ')).join('\n');
       return xmlDeclaration + items;
     }
-    if (typeof obj === 'object') {
-      const children = Object.keys(obj).map(key => jsonToXml(obj[key], key, false, indent + '  ')).join('\n');
+    if (typeof obj === 'object' && obj !== null) {
+      const children = Object.keys(obj as Record<string, unknown>).map(key => jsonToXml((obj as Record<string, unknown>)[key], key, false, indent + '  ')).join('\n');
       return xmlDeclaration + `${indent}<${rootName}>\n${children}\n${indent}</${rootName}>`;
     }
     return xmlDeclaration + `${indent}<${rootName}>${obj}</${rootName}>`;
   };
 
-  const jsonToCsv = (obj: any): string => {
+  const jsonToCsv = (obj: unknown): string => {
     if (Array.isArray(obj)) {
       if (obj.length === 0) return '';
       
@@ -310,10 +311,10 @@ export default function JsonFormatter() {
     
     // For single object, convert to single row CSV
     if (typeof obj === 'object' && obj !== null) {
-      const keys = Object.keys(obj);
+      const keys = Object.keys(obj as Record<string, unknown>);
       const header = keys.join(',');
       const row = keys.map(key => {
-        const value = obj[key];
+        const value = (obj as Record<string, unknown>)[key];
         if (value === null || value === undefined) return '';
         if (typeof value === 'string' && value.includes(',')) {
           return `"${value.replace(/"/g, '""')}"`;
@@ -355,31 +356,31 @@ export default function JsonFormatter() {
   };
 
   // Toolbar functions
-  const undoEditor = (editor: any) => {
+  const undoEditor = (editor: Ace.Editor) => {
     if (editor) {
       editor.undo();
     }
   };
 
-  const redoEditor = (editor: any) => {
+  const redoEditor = (editor: Ace.Editor) => {
     if (editor) {
       editor.redo();
     }
   };
 
-  const findInEditor = (editor: any) => {
+  const findInEditor = (editor: Ace.Editor) => {
     if (editor) {
       editor.execCommand('find');
     }
   };
 
-  const selectAllInEditor = (editor: any) => {
+  const selectAllInEditor = (editor: Ace.Editor) => {
     if (editor) {
       editor.selectAll();
     }
   };
 
-  const duplicateContent = (editor: any) => {
+  const duplicateContent = (editor: Ace.Editor) => {
     if (editor) {
       const content = editor.getValue();
       editor.setValue(content + '\n' + content);
@@ -536,7 +537,7 @@ export default function JsonFormatter() {
         JSON.parse(data);
         setInputJson(data);
         setFetchError('');
-      } catch (parseError) {
+      } catch (_parseError) {
         setFetchError('Response is not valid JSON');
         setInputJson(data); // Still show the response
       }
@@ -558,7 +559,7 @@ export default function JsonFormatter() {
 
     try {
       // Clean up the curl command - remove line breaks and normalize spaces
-      let cleanCommand = curlCommand
+      const cleanCommand = curlCommand
         .replace(/\\\s*\n/g, ' ') // Remove backslashes and line breaks
         .replace(/\s+/g, ' ') // Normalize multiple spaces to single space
         .trim();
@@ -645,7 +646,7 @@ export default function JsonFormatter() {
         JSON.parse(data);
         setInputJson(data);
         setFetchError('');
-      } catch (parseError) {
+      } catch (_parseError) {
         setFetchError('Response is not valid JSON');
         setInputJson(data); // Still show the response
       }
@@ -866,14 +867,14 @@ export default function JsonFormatter() {
               {/* Input Editor Toolbar */}
               <div className="flex items-center gap-1 p-2 bg-gray-200 dark:bg-gray-600 border-b border-gray-300 dark:border-gray-500">
                 <button
-                  onClick={() => undoEditor(inputEditor)}
+                  onClick={() => undoEditor(inputEditor!)}
                   className="p-2 hover:bg-gray-300 dark:hover:bg-gray-500 rounded-md text-gray-700 dark:text-gray-200 text-sm transition-all duration-200 hover:scale-105 active:scale-95"
                   title="Undo"
                 >
                   ↶
                 </button>
                 <button
-                  onClick={() => redoEditor(inputEditor)}
+                  onClick={() => redoEditor(inputEditor!)}
                   className="p-2 hover:bg-gray-300 dark:hover:bg-gray-500 rounded-md text-gray-700 dark:text-gray-200 text-sm transition-all duration-200 hover:scale-105 active:scale-95"
                   title="Redo"
                 >
@@ -881,14 +882,14 @@ export default function JsonFormatter() {
                 </button>
                 <div className="w-px h-4 bg-gray-400 dark:bg-gray-500 mx-1"></div>
                 <button
-                  onClick={() => findInEditor(inputEditor)}
+                  onClick={() => findInEditor(inputEditor!)}
                   className="p-2 hover:bg-gray-300 dark:hover:bg-gray-500 rounded-md text-gray-700 dark:text-gray-200 text-sm transition-all duration-200 hover:scale-105 active:scale-95"
                   title="Find"
                 >
                   🔍
                 </button>
                 <button
-                  onClick={() => selectAllInEditor(inputEditor)}
+                  onClick={() => selectAllInEditor(inputEditor!)}
                   className="p-2 hover:bg-gray-300 dark:hover:bg-gray-500 rounded-md text-gray-700 dark:text-gray-200 text-sm transition-all duration-200 hover:scale-105 active:scale-95"
                   title="Select All"
                 >
@@ -925,7 +926,7 @@ export default function JsonFormatter() {
                 </button>
                 <div className="w-px h-4 bg-gray-400 dark:bg-gray-500 mx-1"></div>
                 <button
-                  onClick={() => duplicateContent(inputEditor)}
+                  onClick={() => duplicateContent(inputEditor!)}
                   className="p-2 hover:bg-gray-300 dark:hover:bg-gray-500 rounded-md text-gray-700 dark:text-gray-200 text-sm transition-all duration-200 hover:scale-105 active:scale-95"
                   title="Duplicate"
                 >
@@ -977,7 +978,7 @@ export default function JsonFormatter() {
                   onLoad={(editor) => {
                     setInputEditor(editor);
                     editor.setTheme('ace/theme/github');
-                    editor.container.style.backgroundColor = '#ddd';
+                    (editor.container as HTMLElement).style.backgroundColor = '#ddd';
                   }}
                 />
               </div>
@@ -1035,14 +1036,14 @@ export default function JsonFormatter() {
               {/* Preview Editor Toolbar */}
               <div className="flex items-center gap-1 p-2 bg-gray-200 dark:bg-gray-600 border-b border-gray-300 dark:border-gray-500">
                 <button
-                  onClick={() => findInEditor(previewEditor)}
+                  onClick={() => findInEditor(previewEditor!)}
                   className="p-2 hover:bg-gray-300 dark:hover:bg-gray-500 rounded-md text-gray-700 dark:text-gray-200 text-sm transition-all duration-200 hover:scale-105 active:scale-95"
                   title="Find"
                 >
                   🔍
                 </button>
                 <button
-                  onClick={() => selectAllInEditor(previewEditor)}
+                  onClick={() => selectAllInEditor(previewEditor!)}
                   className="p-2 hover:bg-gray-300 dark:hover:bg-gray-500 rounded-md text-gray-700 dark:text-gray-200 text-sm transition-all duration-200 hover:scale-105 active:scale-95"
                   title="Select All"
                 >
@@ -1065,7 +1066,7 @@ export default function JsonFormatter() {
                 </button>
                 <div className="w-px h-4 bg-gray-400 dark:bg-gray-500 mx-1"></div>
                 <button
-                  onClick={() => duplicateContent(previewEditor)}
+                  onClick={() => duplicateContent(previewEditor!)}
                   className="p-2 hover:bg-gray-300 dark:hover:bg-gray-500 rounded-md text-gray-700 dark:text-gray-200 text-sm transition-all duration-200 hover:scale-105 active:scale-95"
                   title="Duplicate"
                 >
@@ -1123,7 +1124,7 @@ export default function JsonFormatter() {
                   onLoad={(editor) => {
                     setPreviewEditor(editor);
                     editor.setTheme('ace/theme/github');
-                    editor.container.style.backgroundColor = '#ddd';
+                    (editor.container as HTMLElement).style.backgroundColor = '#ddd';
                   }}
                 />
               </div>
@@ -1187,7 +1188,7 @@ export default function JsonFormatter() {
                     }}
                     onLoad={(editor) => {
                       editor.setTheme('ace/theme/github');
-                      editor.container.style.backgroundColor = '#ddd';
+                      (editor.container as HTMLElement).style.backgroundColor = '#ddd';
                     }}
                   />
                 </div>
@@ -1247,7 +1248,7 @@ export default function JsonFormatter() {
                     }}
                     onLoad={(editor) => {
                       editor.setTheme('ace/theme/github');
-                      editor.container.style.backgroundColor = '#ddd';
+                      (editor.container as HTMLElement).style.backgroundColor = '#ddd';
                     }}
                   />
                 </div>
@@ -1307,7 +1308,7 @@ export default function JsonFormatter() {
                     }}
                     onLoad={(editor) => {
                       editor.setTheme('ace/theme/github');
-                      editor.container.style.backgroundColor = '#ddd';
+                      (editor.container as HTMLElement).style.backgroundColor = '#ddd';
                     }}
                   />
                 </div>
@@ -1367,7 +1368,7 @@ export default function JsonFormatter() {
                     }}
                     onLoad={(editor) => {
                       editor.setTheme('ace/theme/github');
-                      editor.container.style.backgroundColor = '#ddd';
+                      (editor.container as HTMLElement).style.backgroundColor = '#ddd';
                     }}
                   />
                 </div>
