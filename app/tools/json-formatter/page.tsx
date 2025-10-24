@@ -397,7 +397,7 @@ export default function JsonFormatter() {
         // Enter fullscreen mode
         setIsFullscreen(true);
         editorDiv?.classList.add('fixed', 'inset-0', 'z-50', 'bg-white', 'dark:bg-gray-900');
-        editorDiv?.style.setProperty('padding', '20px');
+        (editorDiv as HTMLElement)?.style.setProperty('padding', '20px');
         
         // Add close button
         const closeButton = document.createElement('button');
@@ -415,7 +415,7 @@ export default function JsonFormatter() {
         // Exit fullscreen mode
         setIsFullscreen(false);
         editorDiv?.classList.remove('fixed', 'inset-0', 'z-50', 'bg-white', 'dark:bg-gray-900');
-        editorDiv?.style.removeProperty('padding');
+        (editorDiv as HTMLElement)?.style.removeProperty('padding');
         
         // Remove close button
         const closeButton = document.querySelector('.fixed.top-4.right-4');
