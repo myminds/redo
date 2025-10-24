@@ -227,6 +227,19 @@ export default function Home() {
               </div>
             </div>
           </Link>
+
+          <Link href="/tools/json-formatter" className="block">
+            <div className="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-200 dark:border-gray-700 cursor-pointer">
+              <div className="text-center">
+                <div className="text-4xl mb-3">🔧</div>
+                <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-2">JSON Formatter</h3>
+                <p className="text-sm text-gray-600 dark:text-gray-400 mb-4">Format, minify, and validate JSON data with ease</p>
+                <div className="bg-cyan-600 text-white px-4 py-2 rounded-lg hover:bg-cyan-700 transition-colors duration-200 text-sm font-medium inline-block">
+                  Use Tool
+                </div>
+              </div>
+            </div>
+          </Link>
         </div>
       </section>
 

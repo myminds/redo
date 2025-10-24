@@ -57,6 +57,11 @@ export default function Footer() {
                                 </Link>
                             </li>
                             <li>
+                                <Link href="/tools/json-formatter" className="text-gray-600 dark:text-gray-400 hover:text-green-600 dark:hover:text-green-400 transition-colors">
+                                    🔧 JSON Formatter
+                                </Link>
+                            </li>
+                            <li>
                                 <Link href="/tools/rent-slip-generator" className="text-gray-600 dark:text-gray-400 hover:text-green-600 dark:hover:text-green-400 transition-colors">
                                     🏠 Rent Slip Generator
                                 </Link>

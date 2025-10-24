@@ -10,6 +10,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     'home-loan-calculator',
     'investment-calculator',
     'invoice-generator',
+    'json-formatter',
     'rent-slip-generator',
     'salary-calculator',
     'sip-calculator',
